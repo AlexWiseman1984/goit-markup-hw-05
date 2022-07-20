@@ -103,7 +103,25 @@ body {
   padding-top: 32px;
   padding-bottom: 32px;
 }
+
 /*Site Nav*/
+
+.link-position {
+  position: relative;
+}
+
+.link-position::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 4px;
+  background-color: #2196f3;
+  border-radius: 2px;
+}
 
 .site-nav .link.current {
   color: #2196f3;
