@@ -56,6 +56,10 @@ body {
   font-size: 14px;
 
   max-width: 1600px;
+
+  /* position: relative;
+  margin-left: auto;
+  margin-right: auto; */
 }
 
 .container {
@@ -146,6 +150,10 @@ body {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition-property: var(--accent-color);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav .link:hover,
@@ -179,6 +187,10 @@ body {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition-property: var(--accent-color);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .auth-nav .link:hover,
@@ -267,9 +279,6 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  visibility: visible;
-  transition: opasity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
@@ -280,8 +289,9 @@ body {
 
 .modal {
   position: absolute;
-  top: 221px;
-  left: 536px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 528px;
   height: 581px;
   background-color: #ffffff;
@@ -328,10 +338,6 @@ body {
   justify-content: center;
 }
 
-.list .picture:nth-child(3n) {
-  margin-right: 0;
-}
-
 .section .list {
   display: flex;
   gap: 30px;
@@ -353,6 +359,42 @@ body {
   width: 270px;
 }
 
+/*Pictures*/
+
+.list .picture:nth-child(3n) {
+  margin-right: 0;
+}
+
+.picture-thumb {
+  position: relative;
+}
+
+.text-thumb {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 370px;
+  height: 70px;
+  text-align: center;
+
+  padding-top: 27px;
+  padding-bottom: 27px;
+  background: rgba(47, 48, 58, 0.8);
+}
+
+.text-desc {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+
 /*Section Team*/
 
 .section-title {
@@ -371,12 +413,6 @@ body {
   letter-spacing: 0.03em;
 
   margin-bottom: 0;
-}
-
-.pointer:hover,
-.pointer:focus {
-  color: #ffffff;
-  background-color: #2196f3;
 }
 
 .pointer {
@@ -466,6 +502,10 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+
+  transition-property: var(--accent-color);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
@@ -492,6 +532,10 @@ body {
   height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+
+  transition-property: var(--accent-color);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list.all {
@@ -522,6 +566,10 @@ body {
   line-height: 1.6;
 
   letter-spacing: 0.03em;
+
+  transition-property: var(--accent-color);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter .button:hover,
@@ -531,6 +579,12 @@ body {
 
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.pointer:hover,
+.pointer:focus {
+  color: #ffffff;
+  background-color: #2196f3;
 }
 
 .subtitle {
@@ -557,6 +611,10 @@ body {
 
 .portfolio-items {
   display: block;
+
+  transition-property: var(--accent-color);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-items:hover,
@@ -598,6 +656,30 @@ body {
 .filter .active {
   background-color: var(--accent-color);
   color: var(--primary-white-color);
+}
+
+.portfolio-items {
+  position: relative;
+}
+
+.portfolio-thumb::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 370px;
+  height: 294px;
+  background-color: rgba(33, 150, 243, 0.9);
+
+  overflow: hidden;
+
+  transform: translateY(100%);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-items:hover .portfolio-thumb::before {
+  transform: translateY(0);
 }
 
 /* Footer*/
@@ -647,6 +729,10 @@ body {
 
 .footer-link .link {
   color: rgba(255, 255, 255, 0.6);
+
+  transition-property: var(--accent-color);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-link .link:hover,
@@ -699,6 +785,10 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+
+  transition-property: var(--accent-color);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icons:hover,
