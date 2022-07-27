@@ -54,8 +54,6 @@ body {
 
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-
-  /* max-width: 1600px; */
 }
 
 .container {
@@ -147,7 +145,7 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
 
-  transition-property: color #2196f3;
+  transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -184,7 +182,7 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
 
-  transition-property: color #2196f3;
+  transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -271,9 +269,8 @@ body {
 .backdrop {
   position: fixed;
   top: 0;
-  left: 152px;
-  width: 1600px;
-
+  left: 0;
+  width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
@@ -312,10 +309,12 @@ body {
   width: 30px;
   height: 30px;
   padding: 0;
-  background: #ffffff;
+  background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*Section Benefits*/
@@ -421,9 +420,6 @@ body {
 }
 
 .section-team {
-  max-width: 1600px;
-  margin-right: auto;
-  margin-left: auto;
   background-color: #f5f4fa;
 }
 
@@ -504,7 +500,7 @@ body {
   height: 44px;
   border-radius: 50%;
 
-  transition-property: background-color #2196f3, color #afb1b8;
+  transition-property: background-color, color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -534,7 +530,7 @@ body {
   border: 1px solid #afb1b8;
   border-radius: 4px;
 
-  transition-property: color #2196f3, border-color #2196f3;
+  transition-property: color, border-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -568,9 +564,8 @@ body {
 
   letter-spacing: 0.03em;
 
-  transition-property: background-color #2196f3, color #212121,
-    box-shadow 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
+  transition-property: background-color, color, box-shadow 0px 3px 1px rgba(0, 0, 0, 0.1),
+    0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -616,8 +611,7 @@ body {
   display: block;
   width: 370px;
 
-  transition-property: box-shadow 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition-property: box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -664,28 +658,26 @@ body {
 }
 
 .text-overlay {
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
   height: 100%;
   padding: 63px 24px;
   color: #ffffff;
   background-color: rgba(33, 150, 243, 0.9);
 
-  transition: transform 250ms;
+  transition-property: transform;
+  transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio-overlay {
   position: relative;
   overflow: hidden;
-}
-
-.text-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translateY(100%);
 }
 
 .portfolio-items:hover .text-overlay {
@@ -695,9 +687,6 @@ body {
 /* Footer*/
 
 .page-footer {
-  max-width: 1600px;
-  margin-right: auto;
-  margin-left: auto;
   background-color: #2f303a;
   padding: 60px 0;
 }
@@ -740,7 +729,7 @@ body {
 .footer-link .link {
   color: rgba(255, 255, 255, 0.6);
 
-  transition-property: color #2196f3;
+  transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -796,7 +785,7 @@ body {
   height: 44px;
   border-radius: 50%;
 
-  transition-property: background-color rgba(255, 255, 255, 0.1), color #ffffff;
+  transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
